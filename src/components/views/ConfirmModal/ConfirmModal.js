@@ -1,7 +1,15 @@
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal';
+import { useDispatch } from 'react-redux';
+import { removePost } from '../../../redux/postsRedux';
 
 const ConfirmModal = (props) => {
+  const dispatch = useDispatch();
+
+  const deletePost =  e => {
+    e.preventDefault();
+    dispatch( removePost(props.id));
+  };
   return(
     <Modal {...props} centered>
       <Modal.Header closeButton>
@@ -15,7 +23,7 @@ const ConfirmModal = (props) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={props.onHide}>Cancel</Button>
-        <Button variant="danger" onClick={props.deletePost}>Remove</Button>
+        <Button variant="danger" onClick={deletePost}>Remove</Button>
       </Modal.Footer>
     </Modal>
   );

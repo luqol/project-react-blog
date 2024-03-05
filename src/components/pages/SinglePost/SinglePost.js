@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { getPostById, removePost } from '../../../redux/postsRedux';
+import { getPostById } from '../../../redux/postsRedux';
 import SingleCardPost from '../../views/SingleCardPost/SingleCardPost';
 import { Col, Row } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
@@ -13,13 +13,7 @@ const SinglePost = () => {
   const [modalShow, setModalShow] = useState(false);
   const { id } = useParams();
   const postData = useSelector(state => getPostById(state, id));
-  const dispatch = useDispatch();
-
-  const deletePost =  e => {
-    e.preventDefault();
-    dispatch( removePost(id));
-  };
-
+ 
   if (!postData) return <Navigate to='/' />
   else return(
     <>
@@ -32,7 +26,7 @@ const SinglePost = () => {
           <Button variant="outline-danger" onClick={ () => setModalShow(true)}>Delete</Button> 
         </Col>
       </Row>
-      <ConfirmModal show={modalShow} onHide={() => setModalShow(false)}  deletePost={ deletePost} />
+      <ConfirmModal show={modalShow} onHide={() => setModalShow(false)}  id={id} />
     </>
   );
 };
