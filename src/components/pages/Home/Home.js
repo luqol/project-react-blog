@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { getAllPosts } from "../../../redux/postsRedux";
 import CardPost from "../../views/CardPost/CardPost";
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 
 const Home = () => {
@@ -11,8 +11,8 @@ const Home = () => {
     return(
       <div>
         <h2>All posts</h2>
-        <Row className="justify-content-between">
-          {allPosts.map( post =>  <CardPost key={post.id} {...post}/>  )}
+        <Row xs={1} sm={2} md={3} className="justify-content-between">
+          {allPosts.map( post =>  <Col><CardPost key={post.id} {...post}/></Col>  )}
         </Row>
       </div>
     );
