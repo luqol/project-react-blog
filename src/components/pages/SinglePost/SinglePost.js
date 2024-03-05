@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
-import ConfirmModal from '../../features/ConfirmModal/ConfirmModal';
+import ConfirmModal from '../../views/ConfirmModal/ConfirmModal';
 
 const SinglePost = () => {
   const [modalShow, setModalShow] = useState(false);
