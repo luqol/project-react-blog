@@ -12,7 +12,7 @@ const Home = () => {
       <div>
         <h2>All posts</h2>
         <Row xs={1} sm={2} md={3} className="justify-content-between">
-          {allPosts.map( post =>  <Col><CardPost key={post.id} {...post}/></Col>  )}
+          {allPosts.map( post =>  <Col key={post.id}><CardPost {...post}/></Col>  )}
         </Row>
       </div>
     );
