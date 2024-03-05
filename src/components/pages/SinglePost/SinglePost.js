@@ -32,7 +32,7 @@ const SinglePost = () => {
           <Button variant="outline-danger" onClick={ () => setModalShow(true)}>Delete</Button> 
         </Col>
       </Row>
-      <ConfirmModal show={modalShow} onHide={() => setModalShow(false)}   deletePost={deletePost} />
+      <ConfirmModal show={modalShow} onHide={() => setModalShow(false)}  deletePost={ deletePost} />
     </>
   );
 };
