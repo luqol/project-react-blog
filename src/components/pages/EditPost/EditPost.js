@@ -1,8 +1,14 @@
-
+import { Col, Row } from "react-bootstrap";
+import EditPostForm from '../../features/EditPostForm/EditPostForm';
 
 const EditPost = () => {
     return(
-      <h1>EditPost</h1>
+      <Row className="justify-content-center">
+      <Col md={8}> 
+        <h2>Edit Post</h2>
+        <EditPostForm />
+      </Col>
+    </Row>
     );
   };
   

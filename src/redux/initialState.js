@@ -5,7 +5,7 @@ const initialState = {
       title: 'Article title',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-02-2024',
+      publishedDate: '2024-02-22',
       author: 'John Doe',
     },
     {
@@ -13,7 +13,7 @@ const initialState = {
       title: 'Article title II',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-02-2024',
+      publishedDate: '2024-06-06',
       author: 'Jan Karosha',
     },
     {
@@ -21,7 +21,7 @@ const initialState = {
       title: 'Article title III',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-02-2024',
+      publishedDate: '2024-09-02',
       author: 'Timoty Pumpkin',
     },
     {
@@ -29,7 +29,7 @@ const initialState = {
       title: 'Article title IV',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-02-2024',
+      publishedDate: '2024-02-12',
       author: 'Timoty Pumpkin',
     },
     {
@@ -37,7 +37,7 @@ const initialState = {
       title: 'Article title V',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-02-2024',
+      publishedDate: '2024-03-02',
       author: 'Timoty Pumpkin',
     },
   ],
