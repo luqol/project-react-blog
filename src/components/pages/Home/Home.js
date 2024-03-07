@@ -15,7 +15,6 @@ const Home = () => {
         <Col xs={2}> <h2>All posts</h2> </Col>
         <Col xs={2} className="text-end"> <Button as={NavLink}  to={'/post/add'} variant="outline-info">Add Post</Button> </Col>
         </Row>
-        
         <Row xs={1} sm={2} md={3} className="justify-content-between">
           {allPosts.map( post =>  <Col key={post.id}><CardPost {...post}/></Col>  )}
         </Row>

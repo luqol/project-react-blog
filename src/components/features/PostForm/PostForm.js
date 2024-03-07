@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import { Button, Col, Form } from "react-bootstrap";
 import { useState } from "react";
+import ReactQuill from 'react-quill'
+import DatePicker from "react-datepicker";
+
 
 const PostForm = ({action, actionText, ...props}) => {
 
   const [title, setTitle] = useState(props.title || '');
   const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
-  const [content, setContent] = useState(props.content ||'');
-  const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
+  const [content, setContent] = useState(props.content || '');
+  const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
   const [author, setAuthor] = useState(props.author || '');
 
   const handleSubmit = e => {
@@ -26,8 +29,8 @@ const PostForm = ({action, actionText, ...props}) => {
         <Form.Control value={author} type="text" placeholder="John Doe" onChange={e => setAuthor(e.target.value)}/>
     </Form.Group>
     <Form.Group className="mt-3" as={Col} md={6}>
-        <Form.Label>Published:</Form.Label>
-        <Form.Control value={publishedDate} type="date" onChange={e => setPublishedDate(e.target.value)}/>
+        <Form.Label>Published:</Form.Label><br />
+        <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)} />
     </Form.Group>
     <Form.Group className="mt-3" as={Col} >
         <Form.Label>Short description:</Form.Label>
@@ -35,7 +38,7 @@ const PostForm = ({action, actionText, ...props}) => {
     </Form.Group>
     <Form.Group className="mt-3" as={Col} >
         <Form.Label>Main content:</Form.Label>
-        <Form.Control as='textarea' rows={6} placeholder="..." value={content} onChange={e => setContent(e.target.value)}/>
+        <ReactQuill theme="snow" value={content} onChange={setContent} />
     </Form.Group>
 
 
