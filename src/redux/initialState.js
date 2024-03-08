@@ -7,6 +7,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2024-02-22'),
       author: 'John Doe',
+      category: 'News',
     },
     {
       id: '2',
@@ -15,6 +16,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2024-12-24'),
       author: 'Jan Karosha',
+      category: 'Movies',
     },
     {
       id: '3',
@@ -23,6 +25,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2024-06-30'),
       author: 'Timoty Pumpkin',
+      category: 'News',
     },
     {
       id: '4',
@@ -31,6 +34,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2024-09-11'),
       author: 'Timoty Pumpkin',
+      category: 'News',
     },
     {
       id: '5',
@@ -39,7 +43,22 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2024-03-03'),
       author: 'Timoty Pumpkin',
+      category: 'Sport',
     },
+  ],
+  categories: [
+    {
+      id: '1',
+      category: 'Sport',
+     },
+     {
+      id: '2',
+      category: 'News',
+     },
+     {
+      id: '3',
+      category: 'Movies',
+     },
   ],
 };
 

@@ -4,6 +4,8 @@ import { useState } from "react";
 import ReactQuill from 'react-quill'
 import DatePicker from "react-datepicker";
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 
 
 const PostForm = ({action, actionText, ...props}) => {
@@ -13,19 +15,22 @@ const PostForm = ({action, actionText, ...props}) => {
   const [content, setContent] = useState(props.content || '');
   const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
   const [author, setAuthor] = useState(props.author || '');
+  const [category, setCategory] = useState(props.category || '')
   const [contentError, setContentError] = useState(false);
   const [dateError, setDateError] = useState(false);
 
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
+
+  const allCategories = useSelector(getAllCategories);
   
   const handleSubmit = () => {
     setContentError(!content);
     setDateError(!publishedDate);
     if ( content && publishedDate ){
-      action({title, shortDescription, content, publishedDate, author});
+      action({title, shortDescription, content, publishedDate, author, category});
     }
   };
-
+  
   return(
     <Form onSubmit={validate(handleSubmit)}>
     <Form.Group className="mt-3" as={Col} md={6}>
@@ -49,6 +54,15 @@ const PostForm = ({action, actionText, ...props}) => {
         <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)} />
         {dateError && <small className="d-block form-text text-danger mt-2">Please choose date</small>}
     </Form.Group>
+
+    <Form.Group className="mt-3" as={Col} md={6}>
+      <Form.Label>Category:</Form.Label>
+      <Form.Select value={category} onChange={ e=> setCategory(e.target.value)}>
+        <option>Select category...</option>
+        { allCategories.map( category => <option key={category.id} value={category.category} >{category.category}</option> )}
+      </Form.Select>
+    </Form.Group>
+
     <Form.Group className="mt-3" as={Col} >
         <Form.Label>Short description:</Form.Label>
         <Form.Control 
