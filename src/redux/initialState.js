@@ -13,7 +13,7 @@ const initialState = {
       title: 'Article title II',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: new Date('2024-02-22'),
+      publishedDate: new Date('2024-12-24'),
       author: 'Jan Karosha',
     },
     {
@@ -21,7 +21,7 @@ const initialState = {
       title: 'Article title III',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: new Date('2024-02-22'),
+      publishedDate: new Date('2024-06-30'),
       author: 'Timoty Pumpkin',
     },
     {
@@ -29,7 +29,7 @@ const initialState = {
       title: 'Article title IV',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: new Date('2024-02-22'),
+      publishedDate: new Date('2024-09-11'),
       author: 'Timoty Pumpkin',
     },
     {
@@ -37,7 +37,7 @@ const initialState = {
       title: 'Article title V',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: new Date('2024-02-22'),
+      publishedDate: new Date('2024-03-03'),
       author: 'Timoty Pumpkin',
     },
   ],
