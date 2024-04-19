@@ -1,3 +1,6 @@
+# Description
+Aplikacja bloga z mozliwoscia dodawania, usuwania, modyfikowania postow
+
 #replit link
 https://18cade46-15ca-44d7-907c-ab9e3ed42871-00-25uoa8ipbum5w.janeway.replit.dev/
 
